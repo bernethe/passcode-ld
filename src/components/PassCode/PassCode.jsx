@@ -11,7 +11,8 @@ const PassCode = ({triggerSuccess, triggerClose}) => {
 
 	const nextInput = (e) => {
 		const input = e.target;
-		if (input.value.length === 1) {
+
+		if (input.value.match(/^[0-9]+$/) && input.value.length === 1) {
 			input.nextElementSibling.value = '';
 			input.nextElementSibling.focus();
 		} else if(input.value.length > 1) {
@@ -87,12 +88,12 @@ const PassCode = ({triggerSuccess, triggerClose}) => {
 				</div>
 				<p>Ingrese el código de autenticación que se le ha enviado por email o SMS.</p>
 				<div className='ld-passcode-inputs'>
-					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' onFocus={focusInput} onPaste={pasteInput} onChange={nextInput} autoFocus={true} />
-					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' onFocus={focusInput} onChange={nextInput} />
-					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' onFocus={focusInput} onChange={nextInput} />
-					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' onFocus={focusInput} onChange={nextInput} />
-					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' onFocus={focusInput} onChange={nextInput} />
-					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' onFocus={focusInput} onChange={getUserCode} />
+					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' pattern='[0-9]*' onFocus={focusInput} onChange={nextInput} onPaste={pasteInput} autoFocus={true} />
+					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' pattern='[0-9]*' onFocus={focusInput} onChange={nextInput} />
+					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' pattern='[0-9]*' onFocus={focusInput} onChange={nextInput} />
+					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' pattern='[0-9]*' onFocus={focusInput} onChange={nextInput} />
+					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' pattern='[0-9]*' onFocus={focusInput} onChange={nextInput} />
+					<input type='number' min={0} max={9} maxLength={1} autoComplete='off' pattern='[0-9]*' onFocus={focusInput} onChange={getUserCode} />
 				</div>
 				<div className='ld-passcode-faq'>
 					<a href='#/'>¿No recibes el código?</a>
