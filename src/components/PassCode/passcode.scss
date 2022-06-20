@@ -31,6 +31,7 @@
 		align-items: center;
 
 		& .ld-passcode-window {
+			position: relative;
 			background-color: #fff;
 			box-shadow: 0 0 15px 5px rgba(0,0,0,.15);
 			padding: 1em;
@@ -38,6 +39,21 @@
 			width: 96%;
 			max-width: 500px;
 			animation: ld-passcode-windowIn .25s ease-in-out 0s 1 normal forwards;
+
+			& button.ld-passcode-close-btn {
+				position: absolute;
+				top: .5em;
+				right: .5em;
+				border: none;
+				background: none;
+				cursor: pointer;
+
+				& svg {
+					width: 1.25em;
+					height: 1.25em;
+					fill: var(--ld-passcode-primary);
+				}
+			}
 
 			& .ld-passcode-icon {
 				width: 100px;

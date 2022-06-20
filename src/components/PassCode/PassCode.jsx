@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
+import PassCodePadlock from './PassCodePadlock';
 import './passcode.scss'
-import PassCodePadlock from './PassCodePadlock'
 
 const PassCode = ({triggerSuccess, triggerClose}) => {
 
@@ -79,6 +79,9 @@ const PassCode = ({triggerSuccess, triggerClose}) => {
 		<div className='ld-passcode-backdrop'></div>
 		<div className='ld-passcode-container'>
 			<div className='ld-passcode-window'>
+				<button className='ld-passcode-close-btn' onClick={triggerClose}>
+					<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12,0C5.37,0,0,5.37,0,12s5.37,12,12,12,12-5.37,12-12S18.63,0,12,0Zm5.3,15.18c.59,.59,.59,1.54,0,2.12-.59,.59-1.54,.59-2.12,0l-3.18-3.18-3.18,3.18c-.59,.59-1.54,.59-2.12,0-.59-.59-.59-1.54,0-2.12l3.18-3.18-3.18-3.18c-.59-.59-.59-1.54,0-2.12s1.54-.59,2.12,0l3.18,3.18,3.18-3.18c.59-.59,1.54-.59,2.12,0s.59,1.54,0,2.12l-3.18,3.18,3.18,3.18Z'/></svg>
+				</button>
 				<div className='ld-passcode-icon' ref={refIcon}>
 					<PassCodePadlock />
 				</div>
